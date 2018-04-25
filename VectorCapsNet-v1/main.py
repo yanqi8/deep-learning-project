@@ -219,10 +219,10 @@ def main(_):
   batch = tf.Variable(0, dtype=data_type())
   # Decay once per epoch, using an exponential schedule starting at 0.01.
   learning_rate = tf.train.exponential_decay(
-      0.001,                # Base learning rate.
+      0.01,                # Base learning rate.
       batch * BATCH_SIZE,  # Current index into the dataset.
       train_size,          # Decay step.
-      0.95,                # Decay rate.
+      0.90,                # Decay rate.
       staircase=True)
   # Use simple momentum for the optimization.
   optimizer = tf.train.AdamOptimizer(learning_rate).minimize(loss,
