@@ -39,7 +39,7 @@ def capsules_v0(inputs,labels, num_classes, iterations, name='CapsuleEM-V0'):
     #nets = capsule_dropout(nets,drop_probability=0.25)
     # inputs: (poses, activations) -> capsule-conv 3x3x32x32x4x4, strides 2 -> (poses, activations)
     nets = capsules_conv(nets, kernel_shape=[5, 5], strides=[1, 2, 2, 1], iterations=iterations, name='capsule_conv1',out_capsule_dims=16,out_capsule_channels=16)
-    nets = capsule_dropout(nets,drop_probability=0.25)
+    # nets = capsule_dropout(nets,drop_probability=0.25)
     # inputs: (poses, activations) -> capsule-conv 3x3x32x32x4x4, strides 1 -> (poses, activations)
     #nets = capsules_conv(nets, kernel_shape=[3, 3], strides=[1, 2, 2, 1], iterations=iterations, name='capsule_conv2',out_capsule_dims=16,out_capsule_channels=32)
     #nets = capsule_dropout(nets,drop_probability=0.25)
